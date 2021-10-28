@@ -8,5 +8,23 @@
   </head>
   <body>
     <h1>Hello World</h1>
+    <input type="text" name="firstName" />
+    <input type="text" name="email" />
+    <input type="password" name="password" />
+    <input type="button" value="Register!" id="subbmitBtn" />
+    <div id="confirmationMessage"></div>
+
+    <script>
+      const emailInput = document.querySelector("input[name=email]");
+      const button = document.getElementById("subbmitBtn");
+      const messageElement = document.getElementById("confirmationMessage");
+      button.addEventListener("click", () => {
+        if (emailInput.value === "") {
+          messageElement.innerText = "Hey! You need to give us an e-mail";
+        } else {
+          messageElement.innerText = "Thank you for signing up!";
+        }
+      });
+    </script>
   </body>
 </html>
